@@ -1,0 +1,64 @@
+---
+interface Props {
+	id: string;
+	number: string;
+	title: string;
+}
+
+const { id, number, title } = Astro.props;
+---
+
+<section class="portfolio-section" id={id} aria-labelledby={`${id}-title`}>
+	<div class="section-number" aria-hidden="true">{number}</div>
+	<div class="section-content">
+		<h2 id={`${id}-title`}>{title}</h2>
+		<div class="section-copy"><slot /></div>
+	</div>
+</section>
+
+<style>
+	.portfolio-section {
+		display: grid;
+		grid-template-columns: 58px minmax(0, 1fr);
+		gap: 24px;
+		padding: 40px 0;
+		border-bottom: 1px solid var(--color-border);
+		scroll-margin-top: 24px;
+	}
+
+	.section-number {
+		padding-top: 6px;
+		color: var(--color-copy);
+		font-size: 12px;
+		font-variant-numeric: tabular-nums;
+	}
+
+	h2 {
+		margin: 0;
+		color: var(--color-ink);
+		font-family: var(--font-heading);
+		font-size: 30px;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+
+	.section-copy {
+		max-width: 680px;
+		margin-top: 13px;
+		color: var(--color-copy);
+		font-size: 15px;
+		line-height: 1.8;
+	}
+
+	@media (max-width: 600px) {
+		.portfolio-section {
+			grid-template-columns: 34px minmax(0, 1fr);
+			gap: 12px;
+			padding: 30px 0;
+		}
+
+		h2 {
+			font-size: 26px;
+		}
+	}
+</style>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="The professional portfolio of Dr Ndungu Alan Kinungi."
+		/>
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Dr Ndungu Alan Kinungi | Professional Portfolio</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	:global(:root) {
+		--color-ink: #19372f;
+		--color-forest: #286448;
+		--color-forest-hover: #1d5038;
+		--color-copy: #52675e;
+		--color-sage: #edf4ef;
+		--color-sage-soft: #f8faf8;
+		--color-sage-pale: #dcebe0;
+		--color-sage-number: #c3d6c8;
+		--color-border: #dfe8e1;
+		--color-border-strong: #b8cdbd;
+		--color-accent: #3f6954;
+		--font-body: 'DM Sans', 'Segoe UI', sans-serif;
+		--font-heading: 'Source Serif 4', Georgia, serif;
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100%;
+		background: #fff;
+		color: var(--color-ink);
+		font-family: var(--font-body);
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	body {
+		min-width: 320px;
+		min-height: 100vh;
+	}
+
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(::selection) {
+		background: var(--color-sage-pale);
+		color: var(--color-ink);
+	}
+
+	:global(a:focus-visible) {
+		outline: 3px solid var(--color-forest);
+		outline-offset: 4px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(*),
+		:global(*::before),
+		:global(*::after) {
+			scroll-behavior: auto !important;
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+</style>

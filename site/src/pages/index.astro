@@ -1,0 +1,335 @@
+---
+import PortfolioSection from '../components/PortfolioSection.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<a class="skip-link" href="#main-content">Skip to main content</a>
+	<SiteHeader />
+	<main id="main-content">
+		<section class="intro" id="top" aria-labelledby="intro-title">
+			<div class="intro-inner">
+				<div class="intro-copy">
+					<p class="eyebrow"><span class="eyebrow-rule"></span>Professional portfolio</p>
+					<h1 id="intro-title">Dr Ndungu<br />Alan Kinungi</h1>
+					<p class="intro-summary">
+						I’m a pharmacist and MSc Cancer Biology and Therapy student at the University of Liverpool.
+						My pharmacy background informs my interest in cancer at the molecular and cellular level.
+					</p>
+					<a class="contact-link" href="#contact">
+						Contact <span aria-hidden="true">&#8594;</span>
+					</a>
+				</div>
+				<div class="intro-aside" aria-hidden="true">
+					<span class="aside-index">PROFILE</span>
+					<span class="aside-number">01</span>
+					<span class="aside-rule"></span>
+					<span class="aside-caption">Clinical practice<br />and scholarship</span>
+				</div>
+			</div>
+		</section>
+
+		<div class="sections-wrap">
+			<PortfolioSection id="clinical-interests" number="01" title="Clinical interests">
+				<p>
+					I’m interested in understanding how the biological mechanisms behind cancer shape its
+					development and influence treatment response.
+				</p>
+			</PortfolioSection>
+			<PortfolioSection id="experience" number="02" title="Experience">
+				<p>
+					My background in pharmacy has given me a strong foundation in pharmacology, therapeutics,
+					and patient-centred care.
+				</p>
+			</PortfolioSection>
+			<PortfolioSection id="education" number="03" title="Education">
+				<p>
+					I’m studying for an MSc in Cancer Biology and Therapy at the University of Liverpool.
+				</p>
+			</PortfolioSection>
+			<PortfolioSection id="research" number="04" title="Research">
+				<p>
+					My research interests include cancer cell biology, genetic alterations, and therapeutic
+					resistance. For my MSc project, I’m exploring how chromosome 17p deletion affects cellular
+					behaviour and response to cancer therapies, with a focus on chronic lymphocytic leukaemia
+					(CLL). My long-term goal is to bridge pharmacy and cancer research and contribute to the
+					understanding and development of more effective, targeted therapies.
+				</p>
+			</PortfolioSection>
+			<PortfolioSection id="favourite-things" number="05" title="Favourite things">
+				<p>Fitness and well-being training, travel, and exploring new places.</p>
+			</PortfolioSection>
+			<PortfolioSection id="contact" number="06" title="Contact">
+				<ul class="contact-methods">
+					<li><a href="mailto:kinungalan15@gmail.com">kinungalan15@gmail.com</a></li>
+					<li><a href="tel:+447350217701">+44 7350 217701</a></li>
+					<li><a href="tel:+254701787167">+254 701 787167</a></li>
+				</ul>
+			</PortfolioSection>
+		</div>
+	</main>
+	<footer>
+		<div class="footer-inner">
+			<span>Dr Ndungu Alan Kinungi</span>
+			<a href="#top">Back to top <span aria-hidden="true">&#8593;</span></a>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	.skip-link {
+		position: absolute;
+		z-index: 2;
+		top: 12px;
+		left: 12px;
+		transform: translateY(-160%);
+		padding: 10px 14px;
+		background: var(--color-ink);
+		color: #fff;
+		font-size: 14px;
+		text-decoration: none;
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+
+	.intro {
+		background: var(--color-sage);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.intro-inner {
+		width: min(100% - 48px, 1180px);
+		min-height: 480px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 270px;
+		align-items: center;
+		gap: 80px;
+		padding: 72px 0;
+	}
+
+	.intro-copy {
+		max-width: 700px;
+	}
+
+	.eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin: 0 0 22px;
+		color: var(--color-accent);
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.eyebrow-rule {
+		width: 28px;
+		height: 1px;
+		background: var(--color-forest);
+	}
+
+	h1 {
+		margin: 0;
+		color: var(--color-ink);
+		font-family: var(--font-heading);
+		font-size: 76px;
+		font-weight: 500;
+		line-height: 1.04;
+	}
+
+	.intro-summary {
+		max-width: 540px;
+		margin: 24px 0 0;
+		color: var(--color-copy);
+		font-size: 17px;
+		line-height: 1.75;
+	}
+
+	.contact-link {
+		width: fit-content;
+		min-height: 48px;
+		margin-top: 30px;
+		padding: 0 18px;
+		display: inline-flex;
+		align-items: center;
+		gap: 20px;
+		background: var(--color-forest);
+		color: #fff;
+		font-size: 14px;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.contact-link:hover {
+		background: var(--color-forest-hover);
+	}
+
+	.contact-link span,
+	footer a span {
+		font-size: 18px;
+		line-height: 1;
+	}
+
+	.intro-aside {
+		min-height: 300px;
+		padding: 22px 0 22px 26px;
+		border-left: 1px solid var(--color-border-strong);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	.aside-index {
+		color: var(--color-accent);
+		font-size: 11px;
+		font-weight: 700;
+	}
+
+	.aside-number {
+		margin-top: 10px;
+		color: var(--color-sage-number);
+		font-family: var(--font-heading);
+		font-size: 124px;
+		font-weight: 500;
+		line-height: 1;
+	}
+
+	.aside-rule {
+		width: 54px;
+		height: 2px;
+		margin: 15px 0;
+		background: var(--color-forest);
+	}
+
+	.aside-caption {
+		color: var(--color-copy);
+		font-size: 13px;
+		line-height: 1.6;
+	}
+
+	.sections-wrap {
+		width: min(100% - 48px, 900px);
+		margin: 0 auto;
+		padding: 18px 0 42px;
+	}
+
+	.sections-wrap :global(p) {
+		margin: 0;
+	}
+
+	.sections-wrap :global(.contact-methods) {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 8px;
+	}
+
+	.sections-wrap :global(.contact-methods a) {
+		color: var(--color-forest);
+		text-underline-offset: 4px;
+		overflow-wrap: anywhere;
+	}
+
+	.sections-wrap :global(.contact-methods a:hover) {
+		color: var(--color-forest-hover);
+	}
+
+	footer {
+		border-top: 1px solid var(--color-border);
+		background: var(--color-sage-soft);
+	}
+
+	.footer-inner {
+		width: min(100% - 48px, 1180px);
+		min-height: 78px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		color: var(--color-copy);
+		font-size: 12px;
+	}
+
+	footer a {
+		color: var(--color-forest);
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+
+	@media (max-width: 760px) {
+		.intro-inner {
+			min-height: 0;
+			grid-template-columns: minmax(0, 1fr) 150px;
+			gap: 32px;
+			padding: 62px 0;
+		}
+
+		.aside-number {
+			font-size: 92px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.intro-inner,
+		.sections-wrap,
+		.footer-inner {
+			width: min(100% - 36px, 1180px);
+		}
+
+		.intro-inner {
+			grid-template-columns: 1fr;
+			gap: 38px;
+			padding: 54px 0;
+		}
+
+		h1 {
+			font-size: 48px;
+		}
+
+		.intro-summary {
+			font-size: 16px;
+		}
+
+		.intro-aside {
+			min-height: 0;
+			padding: 0 0 0 18px;
+		}
+
+		.aside-number {
+			font-size: 72px;
+		}
+
+		.aside-rule {
+			margin: 10px 0;
+		}
+	}
+
+	@media (max-width: 380px) {
+		.footer-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			gap: 8px;
+			padding: 18px 0;
+		}
+	}
+</style>
